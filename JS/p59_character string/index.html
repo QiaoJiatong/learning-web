@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var str1 = "character string,'百战程序员'<br>"
+        var str2 = '利民镇,"利民一中"<br>'
+        document.write(str1,str2)
+
+        //不能双引号嵌套双引号，或者单引号嵌套单引号
+        
+
+        var str3 = "我们都知道时光一去不复返，\"一寸光阴一寸金\"<br>"
+        document.write(str3)
+
+        //字符串默认只能一行显示，如果要换行，需要转义
+        var str6 = "不能双引号中嵌套双引号\
+        或者是单引号中嵌套单引号"
+
+        document.write(str6)
+
+        var str7 = "大家好，我是新来的同事"
+        console.log(str7.length)
+    </script>
+    
+</body>
+</html>
