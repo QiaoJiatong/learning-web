@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
 
         var user = {
-            name:"itbaizhan",
-            age:12,
-            jobs:["itbaizhan","sxt"],
-            flog:true,
-            getName:function(){
+            name: "itbaizhan",
+            age: 12,
+            jobs: ["itbaizhan", "sxt"],
+            flog: true,
+            getName: function () {
                 console.log("iwen");
             },
-            container:{
-                frontEnd:"WEB前端",
-                backEnd:["python","java"]
+            container: {
+                frontEnd: "WEB前端",
+                backEnd: ["python", "java"]
             }
         }
 
-        console.log(user.name);
+        // console.log(user.name);
         console.log(user.jobs);
 
-        for(var i = 0;i<user.jobs.length;i++){
+        for (var i = 0; i < user.jobs.length; i++) {
             console.log(user.jobs[i]);
         }
 
@@ -38,6 +40,7 @@
 
 
     </script>
-    
+
 </body>
+
 </html>

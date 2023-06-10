@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
@@ -12,8 +14,8 @@
         var num = -100;
         console.log(Math.abs(num));
 
-        console.log(Math.max(10,20,30,40,60));
-        console.log(Math.min(10,20,30,40,60));
+        console.log(Math.max(10, 20, 30, 40, 60));
+        console.log(Math.min(10, 20, 30, 40, 60));
 
 
         var num1 = 10.3;
@@ -25,14 +27,15 @@
         console.log(Math.random());
 
         //生成一个大于10 小于20 的数
-        function getRandomArbtrary(min,max){
+        function getRandomArbtrary(min, max) {
             var result = Math.random() * (max - min) + min;
-                result = Math.floor(result)
+            result = Math.floor(result)
             console.log(result);
         }
-        getRandomArbtrary(10,20);
+        getRandomArbtrary(10, 20);
 
     </script>
-    
+
 </body>
+
 </html>
