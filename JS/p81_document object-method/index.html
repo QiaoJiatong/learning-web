@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>hello1</div>
+    <div>hello2</div>
+
+    <p class="text">hello</p>
+
+    <div name="login"></div>
+
+    <div id="root">哈哈哈</div>
+
+    <div class="nav">nav1</div>
+    <div class="nav">nav2</div>
+
+
+    <script>
+
+        var div1 = document.getElementsByTagName("div")[0];
+        div1.innerHTML = "Hello world"
+
+        var text = document.getElementsByClassName("text")[0];
+        text.innerHTML = "Hello!";
+
+
+        var name = document.getElementsByName("login");
+        console.log(name);
+
+        var root = document.getElementById("root");
+        root.innerHTML = "呵呵呵";
+
+        var nav = document.querySelector(".nav");
+        console.log(nav);
+
+        var navs = document.querySelectorAll(".nav")[1];
+        console.log(navs);
+
+    </script>
+    
+</body>
+</html>
