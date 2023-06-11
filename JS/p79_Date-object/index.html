@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        console.log(Date.now());
+
+        //1686439026956
+        console.log(new Date(1686439026956));
+        console.log(new Date());
+
+        console.log(new Date(1686439026956).getDate());
+        console.log(new Date(1686439026956).getDay());
+        console.log(new Date(1686439026956).getFullYear());
+        // 月份从0~11 0：1月  11：12月
+        console.log(new Date(1686439026956).getMonth() + 1);
+
+
+        //年-月-日 时：分：秒
+        var year = new Date(1686439026956).getFullYear();
+        var month = new Date(1686439026956).getMonth();
+        var Day = new Date(1686439026956).getDate();
+        var hour = new Date(1686439026956).getHours();
+        var minute = new Date(1686439026956).getMinutes();
+        var second = new Date(1686439026956).getSeconds();
+
+        console.log(year + "-" + month + "-" + Day + " " + hour + ":" +minute + ":" + second);
+
+
+    </script>
+    
+</body>
+</html>
