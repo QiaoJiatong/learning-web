@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* 
+        1. vat 关键字：函数级作用域
+        2. let 关键字：
+                1. let是块级作用域（花括号级的作用域）
+                2. let不存在变量提升
+                3. let不允许重复声明 
+        */
+
+        var a = [];
+        for (let i = 0; i < 10; i++) {
+            a[i] = function () {
+                console.log(i);
+            }
+        }
+        a[6](); //6
+
+        // console.log(i);
+        // let i = 10;  //报错
+
+        // let i = 10;
+        // let i = 20;
+        // console.log(i);//报错
+
+    </script>
+
+</body>
+
+</html>
