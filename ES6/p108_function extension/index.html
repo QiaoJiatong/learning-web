@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function fn1() {
+
+        }
+
+        //赋值方式声明函数
+        var fn2 = function (x, y) {
+            return x * y;
+        }
+
+        //箭头函数 =>
+        var fn3 = (x, y) => x + y;
+
+        console.log(fn3(18, 29));
+
+        var fn4 = (x, y) => x + y;
+
+
+        var fn5 = function (x, y) {
+            var z = 10;
+            return x + y + z;
+        }
+
+
+        var fn6 = (x, y) => {
+            var z = 10;
+            return x + y + z;
+        }
+        console.log(fn6(10, 20));
+
+        var fn7 = function () {
+            return {
+                x: 10,
+                y: 30
+            }
+        }
+
+        var fn8 = () => ({ x: 10, y: 30 })
+        console.log(fn8());
+
+        var arr = [10, 20, 30];
+        arr.map(function (element, index) {
+            console.log(element);
+        })
+
+        arr.map((element, index) => {
+            console.log(element);
+        });
+
+        var name = "ime";
+        var user = {
+            name: "iwen",
+            age: 20,
+            getName() {
+                setTimeout(() => {
+                    console.log(this.name);
+                }, 1000);
+            }
+        }
+        user.getName();
+
+    </script>
+
+</body>
+
+</html>
