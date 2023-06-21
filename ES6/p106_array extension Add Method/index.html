@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>标题一</h3>
+    <h3>标题二</h3>
+    <h3>标题三</h3>
+
+    <script>
+
+        //类数组、伪数组，只能使用数组的读取方式和length,不能使用数组方法：push
+
+        //arguments
+        function add() {
+            console.log(arguments);
+            var result = Array.from(arguments)
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+
+
+            result.push(40)
+            console.log(result);
+        }
+
+        add(10, 20, 30);
+
+        //元素集合
+        let titles = document.querySelectorAll("h3");
+        console.log(titles);
+        console.log(Array.from(titles));
+        console.log(titles[1]);
+
+        //类似数组的对象
+        var user = {
+            "0": "iwen",
+            "1": 20,
+            "2": "男",
+            length: 3
+        }
+        console.log(Array.from(user));
+
+        console.log(Array.of(10, 20, 30)); //[10,20,30]
+
+
+
+
+    </script>
+
+</body>
+
+</html>

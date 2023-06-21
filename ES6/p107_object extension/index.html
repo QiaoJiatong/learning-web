@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var name = "iwen";
+        var user = {
+            name,
+            age: 20,
+            // getName: function () {
+            //     console.log(this.name);
+            // },
+            getName() {
+                console.log(this.name);
+            }
+        }
+
+        user.getName();
+
+        function getPoint() {
+            var x = 10.34;
+            var y = 12.78;
+            return { x, y }
+        }
+
+        console.log(getPoint().x, getPoint().y);
+
+
+        var id = "itbaizhan";
+        var user = {
+            [id]: "web,java,python",
+            age: 13
+        }
+        console.log(user);
+
+        var z = { a: 10, b: 20 };
+        var n = { ...z };
+        console.log(n);
+
+
+
+
+    </script>
+
+</body>
+
+</html>
