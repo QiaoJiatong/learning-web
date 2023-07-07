@@ -1,0 +1,1 @@
+Input.map(item => item + 1)

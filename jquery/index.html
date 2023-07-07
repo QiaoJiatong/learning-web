@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="box">hello, world</h1>
+    <h1>hello, vue</h1>
+    <script>
+        // var box = document.getElementById("box");
+        // function clickHanlder(e) {
+        //     e.target.style.color = 'red'
+        // }
+        // box.addEventListener("click", clickHanlder)
+
+        var box = $('#box')
+        box.click(function() {
+            box.css('color', 'red')
+        })
+
+        // var num1 = 100
+        // var num2 = 200
+        // function sum(c, d) {
+        //     const sum = c + d
+        //     return sum
+        // }
+        // function compute(a, b, fn) {
+        //     const res = fn(a, b)
+        //     return res
+        // }
+        // var result1 = compute(num1, num2, sum)
+    </script>
+</body>
+
+</html>
