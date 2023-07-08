@@ -22,7 +22,11 @@ const routes = [
     path:"/newsdetails/:name",
     name: "newsdetails",
     component:() =>import("../views/NewsDetailsView.vue")
-  }
+  },{
+    path: '/Red',
+    name: 'Red',
+    component: () =>import("../views/RedView.vue")
+  },
 ]
 
 const router = createRouter({

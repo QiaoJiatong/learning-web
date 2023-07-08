@@ -1,54 +1,29 @@
 <template>
     <div>
-        <h1>我的第一个网页</h1>
-        <button @click="count++">Count is:{{ count }}</button>
+        <h1 @click="showFullIntro">《红楼梦》简介</h1>
+        <div v-if="flag">
+            <p>{{ intro }}</p>
+        </div>
     </div>
 </template>
-
+  
 <script>
-
 export default {
-    name: "MyComponent",
     data() {
         return {
-            count: 0,
-            firstName: 'John',
-            lastName: 'Doe',
-            ruthor: {
-                name: 'John Doe',
-                books: [
-                    'Vue 2 - Advanced Guide',
-                    'Vue 3 - Basic Guide',
-                    'Vue 4 - The Mystery'
-                ]
+            intro:
+                "《红楼梦》是中国古代小说的巅峰之作，也是中国四大名著之一。全书以贾、史、王、薛四大家族的兴衰为背景，通过对人物命运的描述，展现了封建社会的残酷和虚伪。小说中涉及了丰富的人物形象和精彩的故事情节，既以宏大的篇章展示了封建社会的体制与伦理，又通过草木调和、笔墨凝聚出世界文学史上独一无二的文化艺术光辉。",
+            flag: false
+        };
+    },
+    methods: {
+        showFullIntro() {
+            if (this.flag) {
+                this.flag = false
+            } else {
+                this.flag = true
             }
         }
-    },
-    computed: {
-        fullName: {
-            get() {
-                return this.firstName + ' ' + this.lastName
-            },
-            set(newValue) {
-                [this.firstName, this.lastName] = newValue.split(' ')
-            },
-            publishheBooksMessage() {
-                return this.author.books.length > 0 ? 'Yes' : 'No'
-            }
-        } 
     }
-
-
-}
-
+};
 </script>
-
-<style scoped>
-h1 {
-    color: red;
-}
-
-button {
-    font-weight: bold;
-}
-</style>

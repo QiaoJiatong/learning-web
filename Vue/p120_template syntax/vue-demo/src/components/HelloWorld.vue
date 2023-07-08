@@ -9,7 +9,7 @@
     <p>{{ flag ? "孙猴子" : "傻猴子" }}</p>
   </div>
 </template>
-
+ 
 <script>
 export default {
   name: 'HelloWorld',
