@@ -1,21 +1,18 @@
 <template>
   <div class="home">
-    <titles names="红楼梦" />
-    <titles names="西游记" />
-    <titles names="三国演义" />
-    <titles names="水浒传" />
+    <MainContent />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import titles from './Home.vue'
+import MainContent from './MainContent.vue'
 
 
 export default {
   name: 'HomeView',
-  components: { titles }
+  components: { MainContent }
 }
 </script>
 <style scoped></style>

@@ -14,14 +14,14 @@
 
 <script>
 export default {
-    name: 'Comment',
+    name: 'UserComment',
     data() {
         return {
             comments: [],
             newComment: '',
         }
     },
-    methods: {
+    methods: {  
         addComment() {
             if (this.newComment) {
                 this.comments.push(this.newComment);

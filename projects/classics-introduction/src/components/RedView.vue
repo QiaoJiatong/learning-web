@@ -16,7 +16,13 @@
             楼梦》更以其丰富深刻的思想底蕴和异常出色的艺术成就使学术界产生了以其为研究对象的专门学问—红学。</p>
         <h2>相关星图</h2>
         <nav class="people" aria-labelledby="ucj-1">
-            <div class="character"><img src="./img/林黛玉.webp" class="box1"><p><a href="https://baike.baidu.com/item/%E6%9E%97%E9%BB%9B%E7%8E%89">林黛玉</a></p></div>
+            <div class="character">
+                <img src="./img/林黛玉.webp" class="box1">
+                <div>
+                    <a href="https://baike.baidu.com/item/%E6%9E%97%E9%BB%9B%E7%8E%89">林黛玉</a>
+                    <span></span>
+                </div>
+            </div>
             <div class="character"><img src="./img/贾宝玉.webp" class="box1"><p><a href="https://baike.baidu.com/item/%E8%B4%BE%E5%AE%9D%E7%8E%89/59563">贾宝玉</a></p></div>
             <div class="character"><img src="./img/薛宝钗.webp" class="box1"><p><a href="https://baike.baidu.com/item/%E8%96%9B%E5%AE%9D%E9%92%97">薛宝钗</a></p></div>
             <div class="character"><img src="./img/王熙凤.webp" class="box1"><p><a href="https://baike.baidu.com/item/%E7%8E%8B%E7%86%99%E5%87%A4/2466327">王熙凤</a></p></div>
