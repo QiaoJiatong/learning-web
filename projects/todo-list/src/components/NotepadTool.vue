@@ -1,86 +1,104 @@
 <template>
-  <div>
-    <form @submit.prevent="AddTodoEvent">
-      <textarea v-model="NewEvent" placeholder="请输入待办事件"></textarea>
-      <button type="submit">添加事件</button>
-    </form>
-    <fieldset style="width: 400px">
+  <div style="display: flex;">
+    <div>
+      <textarea v-model="newItem" placeholder="请输入待办事件"></textarea>
+      <button @click="addNewItem">添加事件</button>
+    </div>
+    <fieldset>
       <legend>待办事件</legend>
-      <div v-for="(TodoEvent, index) in TodoEvents" :key="index">
-        <input @click="clickHandle1(index)" type="checkbox" id="scaes" name="scales" check />
-        <label for="scales">{{ TodoEvent }}</label>
-        <input
-          v-if="Time"
-          @click="clickHandle4(index)"
-          type="datetime-local"
-          v-model="AgreedDate"
-          id="start"
-          name="trip-start"
-        />
-        <button v-if="shezhishijian != '隐藏'" @click="clickHandle3">{{ shezhishijian }}</button>
-        <div v-if="show" class="popup">
-          <p>{{ TodoEvent }}</p>
-          <p>{{ AgreedDate }}</p>
-        </div>
-      </div>
+      <todo-item
+        v-for="(todoItem, index) in todoList"
+        :key="todoItem.id"
+        :item="todoItem"
+        @item-complete="completeItem(index)"
+      />
     </fieldset>
     <fieldset>
       <legend>已完成事件</legend>
-      <div v-for="(CompletedEvnt, index) in CompletedEvnts" :key="index">
-        <input @click="clickHandle2(index)" type="checkbox" id="scaes" name="scales" checked />
-        <label for="scales">{{ CompletedEvnt }}</label>
-      </div>
+      <completed-item
+        v-for="(completedItem, index) in completedList"
+        :key="completedList.id"
+        :item="completedItem"
+        @item-todo="todoItem(index)"
+        @item-del = del(index)
+      />
     </fieldset>
   </div>
 </template>
 <script>
 import { ref } from 'vue'
+import TodoItem from './TodoItem.vue'
+import CompletedItem from './CompletedItem.vue'
 
 export default {
   name: 'NotepadTool',
-  components: {},
+  components: { TodoItem, CompletedItem },
   data() {
     return {
-      TodoEvents: [],
-      NewEvent: '',
-      CompletedEvnts: [],
+      todoList: [
+        {
+          id: Date.now(),
+          content: '提醒我',
+          time: new Date('2023-10-01')
+        }
+      ],
+      completedList: [
+        {
+          id: Date.now(),
+          content: ''
+        }
+      ],
+      newItem: '',
+      completedList: [],
       show: false,
       message: '',
-      AgreedDate: ' ',
       age: 10000,
-      shezhishijian: '设置时间',
+      setTime: '设置时间',
       Time: false
     }
   },
   methods: {
-    AddTodoEvent() {
-      if (this.NewEvent) {
-        this.TodoEvents.push(this.NewEvent)
-        this.NewEvent = ''
-        this.shezhishijian = '设置时间'
+    addNewItem() {
+      const item = {
+        id: Date.now(),
+        content: this.newItem,
+        time: null
       }
+      this.todoList.push(item)
+      this.newItem = ''
     },
-    clickHandle1(index) {
-      this.show = false
-      this.CompletedEvnts.push(this.TodoEvents[index])
-      this.TodoEvents.splice(index, 1)
+    completeItem(index) {
+      this.completedList.push(this.todoList[index])
+      this.todoList.splice(index, 1)
     },
-    clickHandle2(index) {
-      this.TodoEvents.push(this.CompletedEvnts[index])
-      this.CompletedEvnts.splice(index, 1)
+    todoItem(index) {
+      this.todoList.push(this.completedList[index])
+      this.completedList.splice(index, 1)
     },
-    clickHandle3(index) {
-      if (this.shezhishijian === '设置时间') {
-        this.Time = true
-        this.shezhishijian = '提交'
-      } else if (this.shezhishijian === '提交') {
-        this.showPopup(index)
-        this.shezhishijian = '隐藏'
-      }
+    del(index){
+      this.completedList.splice(index, 1)
     },
-    clickHandle4() {
-      this.shezhishijian = '提交'
-    },
+    // clickHandle1(index) {
+    //   this.show = false
+    //   this.completedList.push(this.todoList[index])
+    //   this.todoList.splice(index, 1)
+    // },
+    // clickHandle2(index) {
+    //   this.todoList.push(this.completedList[index])
+    //   this.completedList.splice(index, 1)
+    // },
+    // clickHandle3(index) {
+    //   if (this.setTime === '设置时间') {
+    //     this.Time = true
+    //     this.setTime = '提交'
+    //   } else if (this.setTime === '提交') {
+    //     this.showPopup(index)
+    //     this.setTime = '隐藏'
+    //   }
+    // },
+    // clickHandle4() {
+    //   this.setTime = '提交'
+    // },
     showPopup(index) {
       this.show = false
       this.age = Math.round(new Date(this.AgreedDate).getTime() - Date.now())
@@ -95,7 +113,9 @@ export default {
 
 <style scoped>
 fieldset {
-  padding: 50px;
+  width: 400px;
+  height: 200px;
+  margin: 30px;
 }
 
 legend {
@@ -104,13 +124,5 @@ legend {
   padding: 2px;
 }
 
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+
 </style>

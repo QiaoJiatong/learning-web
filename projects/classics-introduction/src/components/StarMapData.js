@@ -5,8 +5,9 @@ import xuebaochai from './img/薛宝钗.webp'
 import wangxifeng from './img/王熙凤.webp'
 import jiayuanchun from './img/贾元春.webp'
 
+export const HOURS_PER_DAY = 24
 
-const StarMapdata = [
+export const starMapData = [
     {
         img: lindaiyv,
         Href:"https://baike.baidu.com/item/%E6%9E%97%E9%BB%9B%E7%8E%89",
@@ -33,4 +34,4 @@ const StarMapdata = [
         name: "贾元春"
     }
 ]
-export default StarMapdata
+// export default starMapData

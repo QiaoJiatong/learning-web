@@ -2,8 +2,43 @@ import hongloumeng from './img/红楼梦.png'
 import xiyouji from './img/西游记.png'
 import sanguoyanyi from './img/三国演义.png'
 import shuihuzhuan from './img/水浒传.png'
+import lindaiyv from './img/林黛玉.webp'
+import jiabaoyv from './img/贾宝玉.webp'
+import xuebaochai from './img/薛宝钗.webp'
+import wangxifeng from './img/王熙凤.webp'
+import jiayuanchun from './img/贾元春.webp'
 
-const data = [{
+// const HOURS_PER_DAY = 24
+
+export const starMapData = [
+    {
+        img: lindaiyv,
+        Href:"https://baike.baidu.com/item/%E6%9E%97%E9%BB%9B%E7%8E%89",
+        name: "林黛玉"
+    },
+    {
+        img: jiabaoyv,
+        Href:"https://baike.baidu.com/item/%E8%B4%BE%E5%AE%9D%E7%8E%89/59563",
+        name: "贾宝玉"
+    },
+    {
+        img: xuebaochai,
+        Href:"https://baike.baidu.com/item/%E8%96%9B%E5%AE%9D%E9%92%97",
+        name: "薛宝钗"
+    },
+    {
+        img: wangxifeng,
+        Href:"https://baike.baidu.com/item/%E7%8E%8B%E7%86%99%E5%87%A4/2466327",
+        name: "王熙凤"
+    },
+    {
+        img: jiayuanchun,
+        Href:"https://baike.baidu.com/item/%E8%B4%BE%E5%85%83%E6%98%A5",
+        name: "贾元春"
+    }
+]
+
+export const data = [{
     name: '红楼梦',
     img: hongloumeng,
     intro: '红楼梦》是中国古代小说的巅峰之作，也是中国四大名著之一。全书以贾、史、王、薛四大家族的兴衰为背景，通过对人物命运的描述，展现了封建社会的残酷和虚伪。小说中涉及了丰富的人物形象和精彩的故事情节，既以宏大的篇章展示了封建社会的体制与伦理，又通过草木调和、笔墨凝聚出世界文学史上独一无二的文化艺术光辉。',
@@ -23,4 +58,12 @@ const data = [{
 }
 ]
 
-export default data
+// const allData = {
+//     data: data,
+//     starMapData: starMapData
+// }
+
+export default {
+    data,
+    starMapData
+}

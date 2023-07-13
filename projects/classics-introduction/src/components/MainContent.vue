@@ -6,8 +6,10 @@
 </template>
 
 <script>
-import data from './data'
+import allData from './data'
 import ClassicIntro from './ClassicIntro.vue'
+
+const data = allData.data
 
 export default {
     name: 'MainContent',

@@ -22,7 +22,12 @@
 </template>
 <script>
 import StarMap from './StarMap.vue';
-import StarMapData from './StarMapData.js'
+import { StarMapData } from './StarMapData.js'
+
+import {starMapData} from './data'
+
+// import allData from './data'
+// const StarMapData = all.starMapData
 
 export default {
     name: "Red",
