@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.js"></script> -->
+
+    <script src="./vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      const { createApp } = window.Vue;
+
+      createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+      }).mount("#app");
+    </script>
+
+    <div id="app">
+      <!-- 使此按钮生效 -->
+      <button>count is: {{ count }}</button>
+    </div>
+  </body>
+</html>
