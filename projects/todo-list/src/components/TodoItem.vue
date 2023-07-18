@@ -28,6 +28,7 @@ export default {
       this.show = false
       this.age = Math.round(new Date(this.item.time).getTime() - Date.now())
       console.log(this.age)
+      // todo: 清除定时器
       setTimeout(() => {
         this.show = true
       }, this.age)
@@ -46,11 +47,14 @@ export default {
   top: 50%;
   left: 40%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: #d36767;
   border: 1px solid #ccc;
   padding: 20px;
+  border-radius: 8px;
 }
 .box {
   margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 </style>

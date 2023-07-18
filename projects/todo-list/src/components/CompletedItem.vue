@@ -18,7 +18,7 @@ export default {
       this.$emit('item-todo')
     },
     del() {
-        this.$emit('item-del')
+      this.$emit('item-del')
     }
   }
 }
@@ -28,6 +28,7 @@ export default {
 
 .box{
     margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
-
 </style>
