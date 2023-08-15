@@ -16,7 +16,9 @@
       />
     </div>
     <el-button @click="showPopup" type="success" circle>完成</el-button>
-    <div v-if="show" class="popup" @click="show = false;">{{ item.content + " " + new Date() }}</div>
+    <div v-if="show" class="popup" @click="show = false">
+      {{ item.content + " " + new Date() }}
+    </div>
   </div>
 </template>
 
@@ -29,7 +31,7 @@ export default {
   data() {
     return {
       show: false,
-      timer:null
+      timer: null,
     };
   },
   emits: ["item-complete"],
@@ -39,18 +41,19 @@ export default {
     },
     showPopup() {
       // debugger
-      this.show = false; 
+      this.show = false;
       this.age = Math.round(new Date(this.item.time).getTime() - Date.now());
       console.log(this.age);
-      this.timer=setTimeout(() => {
+      this.timer = setTimeout(() => {
         this.show = true;
       }, this.age);
-    }
+    },
   },
-    beforeUnmount(){
-      this.timer = null
-     console.log('定时器清除');
-    }
+  beforeUnmount() {
+    clearTimeout(this.timer);
+    this.timer = null;
+    console.log("定时器清除");
+  },
 };
 </script>
 

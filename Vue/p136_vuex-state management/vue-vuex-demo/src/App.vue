@@ -2,15 +2,17 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <p>counter = {{ $store.state.counter }}</p>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <exercise />
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import exercise from './components/exercise.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    exercise
   }
 }
 </script>
