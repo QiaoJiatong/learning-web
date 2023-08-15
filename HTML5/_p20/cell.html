@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cell</title>
+    <link rel="stylesheet" href="./cell.css" />
+  </head>
+  <body>
+    <input type="text" id="search" placeholder="请输入省份" />
+    <select size="5" id="select">
+      <option>河南，郑州</option>
+      <option>江苏，南京</option>
+    </select>
+    <label for="province">省份:</label>
+    <input type="text" id="province" />
+    <label for="provincialCapital">省会:</label>
+    <input type="text" id="provincialCapital" />
+    <button>Create</button>
+    <button>Update</button>
+    <button>Delete</button>
+    <script>
+      const search = document.getElementById("search");
+      const select = document.getElementById("select");
+      const province = document.getElementById("province");
+      const provincialCapital = document.getElementById("provincialCapital");
+
+      var selects = Array.from(select);
+      var options = []
+      for(i = 0; i <= selects.length ;i++){
+        const newSelect = selects[i]
+        let option = newSelect.innerText.split(",")
+        options.push(this.option)
+      }
+      console.log(options);
+      search.addEventListener("input", inquire);
+      function inquire(e) {
+        for (i = 0; i <= selects.length; i++) {
+          if (e === options[0]) {
+            console.log(options);
+           return select.value = selects[i];
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

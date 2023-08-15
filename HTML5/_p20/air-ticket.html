@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Ticket</title>
+    <style>
+      select,
+      input,
+      button {
+        display: block;
+        margin: 0.5em 0;
+        font-size: 15px;
+      }
+      input[disabled] {
+        color: #999;
+      }
+
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>机票预定</h1>
+    <select name="ticketType" id="ticketType">
+      <option selected>One-way flight</option>
+      <option>Return flight</option>
+    </select>
+    <input
+      type="date"
+      id="leaveDate"
+      name="leaveDate"
+      value="2023-08-10"
+      min="2023-08-10"
+    />
+    <input
+      type="date"
+      id="returnDate"
+      name="returnDate"
+      value="2023-08-10"
+      min="2023-08-10"
+    />
+    <button>book</button>
+    <p>Return date must be after departure date.</p>
+
+    <script>
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", showPop);
+      function showPop() {
+        let hint = "";
+        if (ticketType.value === "One-way flight") {
+          hint =
+            "You have booked a one-way flight leaving on" + leaveDate.value;
+        } else {
+          hint =
+            "You have booked a return flight leaving on" +
+            leaveDate.value +
+            "and returning on " +
+            returnDate.value;
+        }
+        alert(hint);
+      }
+      const leaveDate = document.getElementById("leaveDate");
+      const returnDate = document.getElementById("returnDate");
+      const ticketType = document.getElementById("ticketType");
+      const warning = document.querySelector("p");
+      ticketType.addEventListener("input", ticketTypeChange);
+      leaveDate.addEventListener("input", ticketTypeChange);
+      returnDate.addEventListener("input", ticketTypeChange);
+      // console.log(new Date(leaveDate.value));
+      function ticketTypeChange() {
+        if (ticketType.value === "One-way flight") {
+          returnDate.disabled = true;
+          warning.style.display = "none";
+        } else {
+          returnDate.disabled = false;
+          if (new Date(leaveDate.value) >= new Date(returnDate.value)) {
+            btn.disabled = true;
+            warning.style.display = "block";
+          } else {
+            btn.disabled = false;
+            warning.style.display = "none";
+          }
+        }
+      }
+      ticketTypeChange();
+      // const data = {
+      //   ticketType: "one-way", // return
+      //   leaveDate: "2023-08-10",
+      //   returnDate: "2023-08-11",
+      // };
+    </script>
+  </body>
+</html>

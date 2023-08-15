@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>timer</title>
+  </head>
+  <body>
+    <label> Elapsed Time: <progress max="20" value="0"></progress> </label>
+    <div id="time1">0.0s</div>
+    <label> Duration:<input type="range" max="3000" value="2000" /> </label>
+    <div id="time2">20.0s</div>
+    <button>Reset</button>
+
+    <script>
+      const elapsed = document.querySelector("progress");
+      const duration = document.querySelector("input");
+      var time1 = document.getElementById("time1");
+      var time2 = document.getElementById("time2");
+      const btn = document.querySelector("button");
+
+      duration.addEventListener("input", update);
+      btn.addEventListener("click", reSet);
+
+      function update(e) {
+        time2.innerHTML = roundFun(e.srcElement.value / 100, 1) + "s";
+        elapsed.max = e.srcElement.value / 100;
+      }
+
+      function roundFun(value, n) {
+        return Math.round(value * Math.pow(10, n)) / Math.pow(10, n);
+      }
+
+      function reSet() {
+        elapsed.value = 0;
+        clearInterval(times);
+        const newTime = Date.now();
+        var times = setInterval(function () {
+          if (elapsed.max > elapsed.value) {
+            elapsed.value = (Date.now() - newTime) / 1000;
+            time1.innerHTML = roundFun(elapsed.value, 1) + "s";
+            console.log(elapsed.value);
+          } else {
+            clearInterval(times);
+          }
+        }, 10);
+      }
+      reSet();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <span>摄氏度：</span>
+        <input type="number" value="0" id="input1" />
+      </div>
+      <div>
+        <span>华氏度： </span>
+        <input type="number" id="input2" />
+      </div>
+    </div>
+    <script>
+      // 获取用户输入的摄氏度
+      const input1 = document.getElementById("input1");
+      const input2 = document.getElementById("input2");
+
+      input1.addEventListener("input", update);
+      function update(e) {
+        const b = e.srcElement.value;
+        console.log(b);
+        const f = b * (9 / 5) + 32;
+        console.log(f);
+        input2.value = f;
+      }
+      input2.addEventListener("input", update2);
+      function update2(e) {
+        const b = e.srcElement.value;
+        console.log(b);
+        const f = (b - 32) * (5 / 9);
+        console.log(f);
+        input1.value = f;
+      }
+
+      // 转换成华氏度
+      // this.f = c * (9 / 5) + 32
+      // this.c = (f - 32) * (5 / 9)
+
+      // 将华氏度填入华氏度的输入框
+    </script>
+  </body>
+</html>
